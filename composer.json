@@ -1,0 +1,24 @@
+{
+    "name": "katsana/silverstreet",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@katsana.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Silverstreet\\": "src/"
+        }
+    },
+    "require": {
+        "laravie/codex": "^0.3"
+    },
+    "require-dev": {
+        "php-http/guzzle6-adapter": "^1.1"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
