@@ -3,9 +3,12 @@
 namespace Silverstreet\One;
 
 use Silverstreet\Request;
+use Laravie\Codex\Support\MultipartRequest;
 
 class Message extends Request
 {
+    use MultipartRequest;
+
     /**
      * Send SMS.
      *
@@ -20,6 +23,8 @@ class Message extends Request
     {
         $body = array_merge(compact('body', 'destination', 'sender'), $optional);
 
-        return $this->send('POST', 'send.php', [], $body);
+        list($headers, $stream) = $this->prepareMultipartRequestPayloads([], $this->addApiCredentials($body), []);
+
+        return $this->send('POST', 'send.php', $headers, $stream);
     }
 }

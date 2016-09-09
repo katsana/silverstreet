@@ -14,7 +14,8 @@
         }
     },
     "require": {
-        "laravie/codex": "^0.3"
+        "laravie/codex": "^0.3",
+        "php-http/multipart-stream-builder": "^0.1.1"
     },
     "require-dev": {
         "php-http/guzzle6-adapter": "^1.1"

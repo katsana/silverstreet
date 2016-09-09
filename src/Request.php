@@ -7,21 +7,18 @@ use Laravie\Codex\Request as BaseRequest;
 abstract class Request extends BaseRequest
 {
     /**
-     * Send API request.
+     * Add API Credentials.
      *
-     * @param  string  $method
-     * @param  string  $path
-     * @param  array  $headers
-     * @param  \Psr\Http\Message\StreamInterface|array|null  $body
+     * @param  array  $body
      *
-     * @return \Laravie\Codex\Reponse
+     * @return array
      */
-    protected function send($method, $path, array $headers = [], $body = [])
+    protected function addApiCredentials(array $body)
     {
         $body['username'] = $this->client->getApiUsername();
         $body['password'] = $this->client->getApiPassword();
 
-        return parent::send($method, $path, $headers, $body);
+        return $body;
     }
 
     /**
