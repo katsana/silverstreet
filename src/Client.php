@@ -28,7 +28,7 @@ class Client extends BaseClient
      */
     protected $apiPassword;
 
-     /**
+    /**
      * List of supported API versions.
      *
      * @var array
@@ -91,7 +91,7 @@ class Client extends BaseClient
      */
     protected function sanitizeWith()
     {
-        return null;
+        return;
     }
 
     /**
