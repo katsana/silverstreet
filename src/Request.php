@@ -7,18 +7,16 @@ use Laravie\Codex\Request as BaseRequest;
 abstract class Request extends BaseRequest
 {
     /**
-     * Add API Credentials.
-     *
-     * @param  array  $body
+     * Get API Body.
      *
      * @return array
      */
-    protected function addApiCredentials(array $body)
+    protected function getApiBody()
     {
-        $body['username'] = $this->client->getApiUsername();
-        $body['password'] = $this->client->getApiPassword();
-
-        return $body;
+        return [
+            'username' = $this->client->getApiUsername(),
+            'password' = $this->client->getApiPassword(),
+        ];
     }
 
     /**
