@@ -8,6 +8,8 @@ Silverstreet API Client for PHP
 
 
 * [Installation](#installation)
+* [Usages](#usages)
+  - [Creating Silverstreet Client](#creating-silverstreet-client)
 
 
 ## Installation
@@ -26,3 +28,36 @@ To install through composer, simply put the following in your `composer.json` fi
 ### HTTP Adapter
 
 Instead of utilizing `php-http/guzzle6-adapter` you might want to use any other adapter that implements `php-http/client-implementation`. Check [Clients & Adapters](http://docs.php-http.org/en/latest/clients.html) for PHP-HTTP.
+
+## Usages
+
+### Creating Silverstreet Client
+
+You can start by creating a client by using the following code (which uses `php-http/guzzle6-adapter`):
+
+```php
+<?php
+
+use Silverstreet\Client;
+use Http\Client\Common\HttpMethodsClient;
+use Http\Adapter\Guzzle6\Client as GuzzleHttpClient;
+use Http\Message\MessageFactory\GuzzleMessageFactory;
+
+$http = new HttpMethodsClient(
+    new GuzzleHttpClient(), 
+    new GuzzleMessageFactory()
+);
+
+
+$silverstreet = new Client($http, 'your-api-username', 'your-api-password');
+```
+
+You could also use `php-http/discovery` to automatically pick available adapter installed via composer:
+
+```php
+<?php
+
+use Silverstreet\Client;
+
+$silverstreet = Client::make('your-api-username', 'your-api-password');
+```
