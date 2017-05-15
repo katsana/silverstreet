@@ -14,8 +14,8 @@ abstract class Request extends BaseRequest
     protected function getApiBody()
     {
         return [
-            'username' = $this->client->getApiUsername(),
-            'password' = $this->client->getApiPassword(),
+            'username' => $this->client->getApiUsername(),
+            'password' => $this->client->getApiPassword(),
         ];
     }
 
