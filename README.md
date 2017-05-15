@@ -10,7 +10,7 @@ Silverstreet API Client for PHP
 * [Installation](#installation)
 * [Usages](#usages)
   - [Creating Silverstreet Client](#creating-silverstreet-client)
-
+  - [Sending Text Messages](#sending-text-messages)
 
 ## Installation
 
@@ -60,4 +60,13 @@ You could also use `php-http/discovery` to automatically pick available adapter 
 use Silverstreet\Client;
 
 $silverstreet = Client::make('your-api-username', 'your-api-password');
+```
+
+### Sending Text Messages
+
+You can send text messages by running the following code.
+
+```php
+$silverstreet->resource('Message')
+    ->text('Hello world', '+60123456789', $sender);
 ```
