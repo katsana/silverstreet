@@ -22,7 +22,6 @@ class Message extends Request
     public function text($body, $destination, $sender, array $optional = [])
     {
         $body = array_merge(compact('body', 'destination', 'sender'), $optional);
-        $headers['Content-Type'] = 'multipart/form-data';
 
         list($headers, $stream) = $this->prepareMultipartRequestPayloads(
             $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']),
