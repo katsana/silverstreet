@@ -16,13 +16,11 @@
     },
     "require": {
         "laravie/codex": "~0.5.1",
-        "php-http/discovery": "^1.1",
-        "php-http/httplug": "^1.1",
         "php-http/multipart-stream-builder": "^1.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.4",
-        "php-http/curl-client": "^1.1",
+        "php-http/curl-client": "^1.2",
         "phpunit/phpunit": "~4.8.35 || ~5.7"
     },
     "scripts": {
