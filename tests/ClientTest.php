@@ -9,13 +9,16 @@ use Laravie\Codex\Client as Codex;
 
 class ClientTest extends TestCase
 {
+    /**
+     * Teardown the test environment.
+     */
     protected function tearDown()
     {
         m::close();
     }
 
     /** @test */
-    public function make_a_client()
+    public function it_can_make_a_client()
     {
         $client = Client::make('foo', 'bar');
 

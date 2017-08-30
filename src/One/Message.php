@@ -21,11 +21,11 @@ class Message extends Request
      */
     public function text($body, $destination, $sender, array $optional = [])
     {
-        $body = array_merge(compact('body', 'destination', 'sender'), $optional);
+        $payload = array_merge(compact('body', 'destination', 'sender'), $optional);
 
         list($headers, $stream) = $this->prepareMultipartRequestPayloads(
             $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']),
-            $this->mergeApiBody($body),
+            $this->mergeApiBody($payload),
             []
         );
 

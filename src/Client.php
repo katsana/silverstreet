@@ -85,16 +85,6 @@ class Client extends BaseClient
     }
 
     /**
-     * Resolve the sanitizer class.
-     *
-     * @return \Laravie\Codex\Sanitizer|null
-     */
-    protected function sanitizeWith()
-    {
-        return;
-    }
-
-    /**
      * Get resource default namespace.
      *
      * @return string
