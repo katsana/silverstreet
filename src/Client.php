@@ -2,6 +2,7 @@
 
 namespace Silverstreet;
 
+use Laravie\Codex\Discovery;
 use Laravie\Codex\Client as BaseClient;
 use Http\Client\Common\HttpMethodsClient as HttpClient;
 
@@ -61,7 +62,7 @@ class Client extends BaseClient
      */
     public static function make($apiUsername, $apiPassword)
     {
-        return new static(static::makeHttpClient(), $apiUsername, $apiPassword);
+        return new static(Discovery::client(), $apiUsername, $apiPassword);
     }
 
     /**
