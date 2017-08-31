@@ -19,7 +19,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require": {
-        "katsana/silverstreet": "~0.1",
+        "katsana/silverstreet": "~0.2",
         "php-http/guzzle6-adapter": "^1.1"
     }
 }
