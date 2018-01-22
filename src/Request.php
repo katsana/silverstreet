@@ -11,7 +11,7 @@ abstract class Request extends BaseRequest
      *
      * @return array
      */
-    protected function getApiBody()
+    protected function getApiBody(): array
     {
         return [
             'username' => $this->client->getApiUsername(),
