@@ -15,7 +15,8 @@
         }
     },
     "require": {
-        "laravie/codex": "~2.0",
+        "php": ">=7.1",
+        "laravie/codex": "~2.1",
         "php-http/multipart-stream-builder": "^1.0"
     },
     "require-dev": {
@@ -25,7 +26,7 @@
     },
     "scripts": {
         "test": [
-            "./vendor/bin/phpunit -c phpunit.xml.dist"
+            "./vendor/bin/phpunit -c ./"
         ]
     },
     "config": {
