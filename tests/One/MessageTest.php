@@ -28,7 +28,7 @@ class MessageTest extends TestCase
 
         $faker = FakeRequest::create()
                     ->expectEndpointIs('https://api.silverstreet.com/send.php')
-                    ->call('POST', [], m::type('GuzzleHttp\Psr7\Stream'))
+                    ->call('POST', m::type('Array'), m::type('GuzzleHttp\Psr7\Stream'))
                     ->shouldResponseWith(200, '1');
 
         $client = new Client($faker->http(), $body['username'], $body['password']);
