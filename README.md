@@ -67,6 +67,6 @@ $silverstreet = Client::make('your-api-username', 'your-api-password');
 You can send text messages by running the following code.
 
 ```php
-$silverstreet->resource('Message')
+$silverstreet->uses('Message')
     ->text('Hello world', '+60123456789', $sender);
 ```
