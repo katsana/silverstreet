@@ -4,6 +4,7 @@ namespace Silverstreet;
 
 use Laravie\Codex\Discovery;
 use Laravie\Codex\Client as BaseClient;
+use Psr\Http\Message\ResponseInterface;
 use Http\Client\Common\HttpMethodsClient as HttpClient;
 
 class Client extends BaseClient
@@ -83,6 +84,18 @@ class Client extends BaseClient
     public function getApiPassword(): string
     {
         return $this->apiPassword;
+    }
+
+    /**
+     * Resolve the responder class.
+     *
+     * @param  \Psr\Http\Message\ResponseInterface  $response
+     *
+     * @return \Laravie\Codex\Contracts\Response
+     */
+    protected function responseWith(ResponseInterface $response)
+    {
+        return new Response($response);
     }
 
     /**
