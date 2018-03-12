@@ -6,6 +6,7 @@ use Laravie\Codex\Discovery;
 use Laravie\Codex\Client as BaseClient;
 use Psr\Http\Message\ResponseInterface;
 use Http\Client\Common\HttpMethodsClient as HttpClient;
+use Laravie\Codex\Contracts\Response as ResponseContract;
 
 class Client extends BaseClient
 {
@@ -93,7 +94,7 @@ class Client extends BaseClient
      *
      * @return \Laravie\Codex\Contracts\Response
      */
-    protected function responseWith(ResponseInterface $response)
+    protected function responseWith(ResponseInterface $response): ResponseContract
     {
         return new Response($response);
     }
