@@ -60,7 +60,7 @@ class Client extends BaseClient
      * @param string  $apiUsername
      * @param string  $apiPassword
      *
-     * @return $this
+     * @return static
      */
     public static function make(string $apiUsername, string $apiPassword)
     {
@@ -70,9 +70,9 @@ class Client extends BaseClient
     /**
      * Get API username.
      *
-     * @return string|null
+     * @return string
      */
-    public function getApiUsername(): ?string
+    public function getApiUsername(): string
     {
         return $this->apiUsername;
     }
@@ -80,9 +80,9 @@ class Client extends BaseClient
     /**
      * Get API Password.
      *
-     * @return string|null
+     * @return string
      */
-    public function getApiPassword(): ?string
+    public function getApiPassword(): string
     {
         return $this->apiPassword;
     }
