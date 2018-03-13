@@ -62,7 +62,7 @@ class Client extends BaseClient
      *
      * @return $this
      */
-    public static function make(string $apiUsername, string $apiPassword): self
+    public static function make(string $apiUsername, string $apiPassword)
     {
         return new static(Discovery::client(), $apiUsername, $apiPassword);
     }
