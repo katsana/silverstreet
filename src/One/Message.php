@@ -3,6 +3,7 @@
 namespace Silverstreet\One;
 
 use Silverstreet\Request;
+use Laravie\Codex\Contracts\Response;
 use Laravie\Codex\Support\MultipartRequest;
 
 class Message extends Request
@@ -17,9 +18,9 @@ class Message extends Request
      * @param  string  $sender
      * @param  array  $optional
      *
-     * @return \Laravie\Codex\Response
+     * @return \Laravie\Codex\Contracts\Response
      */
-    public function text($body, $destination, $sender, array $optional = [])
+    public function text(string $body, string $destination, string $sender, array $optional = []): Response
     {
         $payload = array_merge(compact('body', 'destination', 'sender'), $optional);
 

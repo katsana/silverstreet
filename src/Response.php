@@ -12,7 +12,7 @@ class Response extends BaseResponse
      *
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         throw new DomainException('Unable to convert response to array!');
     }

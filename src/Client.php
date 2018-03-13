@@ -6,6 +6,7 @@ use Laravie\Codex\Discovery;
 use Laravie\Codex\Client as BaseClient;
 use Psr\Http\Message\ResponseInterface;
 use Http\Client\Common\HttpMethodsClient as HttpClient;
+use Laravie\Codex\Contracts\Response as ResponseContract;
 
 class Client extends BaseClient
 {
@@ -46,7 +47,7 @@ class Client extends BaseClient
      * @param string  $apiUsername
      * @param string  $apiPassword
      */
-    public function __construct(HttpClient $http, $apiUsername, $apiPassword)
+    public function __construct(HttpClient $http, string $apiUsername, string $apiPassword)
     {
         $this->http = $http;
         $this->apiUsername = $apiUsername;
@@ -61,7 +62,7 @@ class Client extends BaseClient
      *
      * @return $this
      */
-    public static function make($apiUsername, $apiPassword)
+    public static function make(string $apiUsername, string $apiPassword): self
     {
         return new static(Discovery::client(), $apiUsername, $apiPassword);
     }
@@ -71,7 +72,7 @@ class Client extends BaseClient
      *
      * @return string|null
      */
-    public function getApiUsername()
+    public function getApiUsername(): ?string
     {
         return $this->apiUsername;
     }
@@ -81,7 +82,7 @@ class Client extends BaseClient
      *
      * @return string|null
      */
-    public function getApiPassword()
+    public function getApiPassword(): ?string
     {
         return $this->apiPassword;
     }
@@ -93,7 +94,7 @@ class Client extends BaseClient
      *
      * @return \Laravie\Codex\Contracts\Response
      */
-    protected function responseWith(ResponseInterface $response)
+    protected function responseWith(ResponseInterface $response): ResponseContract
     {
         return new Response($response);
     }
@@ -103,7 +104,7 @@ class Client extends BaseClient
      *
      * @return string
      */
-    protected function getResourceNamespace()
+    protected function getResourceNamespace(): string
     {
         return __NAMESPACE__;
     }
