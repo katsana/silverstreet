@@ -22,10 +22,12 @@ class Message extends Request
      */
     public function text(string $body, string $destination, string $sender, array $optional = []): Response
     {
-        $payload = array_merge(compact('body', 'destination', 'sender'), $optional);
-
-        return $this->stream(
-            'POST', 'send.php', $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']), $this->mergeApiBody($payload), []
+        $payload = $this->mergeApiBody(
+            array_merge(compact('body', 'destination', 'sender'), $optional)
         );
+
+        $headers = $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']);
+
+        return $this->stream('POST', 'send.php', $headers, $payload, []);
     }
 }
