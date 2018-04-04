@@ -2,5 +2,8 @@
 /vendor/
 composer.lock
 
+# Sample
+/demo.php
+
 # PHPUnit
 coverage/

@@ -24,12 +24,8 @@ class Message extends Request
     {
         $payload = array_merge(compact('body', 'destination', 'sender'), $optional);
 
-        list($headers, $stream) = $this->prepareMultipartRequestPayloads(
-            $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']),
-            $this->mergeApiBody($payload),
-            []
+        return $this->stream(
+            'POST', 'send.php', $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']), $this->mergeApiBody($payload), []
         );
-
-        return $this->send('POST', 'send.php', $headers, $stream);
     }
 }
