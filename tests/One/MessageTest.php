@@ -6,7 +6,7 @@ use Mockery as m;
 use Silverstreet\Client;
 use Silverstreet\One\Message;
 use PHPUnit\Framework\TestCase;
-use Laravie\Codex\Testing\FakeRequest;
+use Laravie\Codex\Testing\Faker;
 
 class MessageTest extends TestCase
 {
@@ -26,7 +26,7 @@ class MessageTest extends TestCase
             'password' => 'bar',
         ];
 
-        $faker = FakeRequest::create()
+        $faker = Faker::create()
                     ->expectEndpointIs('https://api.silverstreet.com/send.php')
                     ->call('POST', m::type('Array'), m::type('GuzzleHttp\Psr7\Stream'))
                     ->shouldResponseWith(200, '1');
