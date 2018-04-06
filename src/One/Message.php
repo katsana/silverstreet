@@ -4,11 +4,11 @@ namespace Silverstreet\One;
 
 use Silverstreet\Request;
 use Laravie\Codex\Contracts\Response;
-use Laravie\Codex\Support\MultipartRequest;
+use Laravie\Codex\Concerns\Request\Multipart;
 
 class Message extends Request
 {
-    use MultipartRequest;
+    use Multipart;
 
     /**
      * Send SMS.
@@ -26,8 +26,8 @@ class Message extends Request
             array_merge(compact('body', 'destination', 'sender'), $optional)
         );
 
-        $headers = $this->mergeApiHeaders(['Content-Type' => 'multipart/form-data']);
-
-        return $this->stream('POST', 'send.php', $headers, $payload, []);
+        return $this->stream(
+            'POST', 'send.php', $this->getApiHeaders(), $payload, []
+        );
     }
 }
