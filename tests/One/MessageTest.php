@@ -13,7 +13,7 @@ class MessageTest extends TestCase
     /**
      * Teardown the test environment.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
@@ -27,8 +27,8 @@ class MessageTest extends TestCase
         ];
 
         $faker = Faker::create()
+                    ->stream('POST', m::type('Array'))
                     ->expectEndpointIs('https://api.silverstreet.com/send.php')
-                    ->call('POST', m::type('Array'), m::type('GuzzleHttp\Psr7\Stream'))
                     ->shouldResponseWith(200, '1');
 
         $client = new Client($faker->http(), $body['username'], $body['password']);
