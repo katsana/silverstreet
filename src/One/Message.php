@@ -2,9 +2,9 @@
 
 namespace Silverstreet\One;
 
-use Silverstreet\Request;
-use Laravie\Codex\Contracts\Response;
 use Laravie\Codex\Concerns\Request\Multipart;
+use Laravie\Codex\Contracts\Response;
+use Silverstreet\Request;
 
 class Message extends Request
 {
@@ -13,10 +13,10 @@ class Message extends Request
     /**
      * Send SMS.
      *
-     * @param  string  $body
-     * @param  string  $destination
-     * @param  string  $sender
-     * @param  array  $optional
+     * @param string $body
+     * @param string $destination
+     * @param string $sender
+     * @param array  $optional
      *
      * @return \Laravie\Codex\Contracts\Response
      */

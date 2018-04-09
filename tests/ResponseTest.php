@@ -3,9 +3,9 @@
 namespace Silverstreet\TestCase;
 
 use Mockery as m;
-use Silverstreet\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use Silverstreet\Response;
 
 class ResponseTest extends TestCase
 {

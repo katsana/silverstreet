@@ -2,11 +2,11 @@
 
 namespace Silverstreet;
 
-use Laravie\Codex\Discovery;
-use Laravie\Codex\Client as BaseClient;
-use Psr\Http\Message\ResponseInterface;
 use Http\Client\Common\HttpMethodsClient as HttpClient;
+use Laravie\Codex\Client as BaseClient;
 use Laravie\Codex\Contracts\Response as ResponseContract;
+use Laravie\Codex\Discovery;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseClient
 {
@@ -43,9 +43,9 @@ class Client extends BaseClient
     /**
      * Construct a new Billplz Client.
      *
-     * @param \Http\Client\Common\HttpMethodsClient  $http
-     * @param string  $apiUsername
-     * @param string  $apiPassword
+     * @param \Http\Client\Common\HttpMethodsClient $http
+     * @param string                                $apiUsername
+     * @param string                                $apiPassword
      */
     public function __construct(HttpClient $http, string $apiUsername, string $apiPassword)
     {
@@ -57,8 +57,8 @@ class Client extends BaseClient
     /**
      * Make a client.
      *
-     * @param string  $apiUsername
-     * @param string  $apiPassword
+     * @param string $apiUsername
+     * @param string $apiPassword
      *
      * @return static
      */
@@ -90,7 +90,7 @@ class Client extends BaseClient
     /**
      * Resolve the responder class.
      *
-     * @param  \Psr\Http\Message\ResponseInterface  $response
+     * @param \Psr\Http\Message\ResponseInterface $response
      *
      * @return \Laravie\Codex\Contracts\Response
      */

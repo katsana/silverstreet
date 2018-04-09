@@ -2,10 +2,10 @@
 
 namespace Silverstreet\TestCase;
 
-use Mockery as m;
-use Silverstreet\Client;
-use PHPUnit\Framework\TestCase;
 use Laravie\Codex\Client as Codex;
+use Mockery as m;
+use PHPUnit\Framework\TestCase;
+use Silverstreet\Client;
 
 class ClientTest extends TestCase
 {
