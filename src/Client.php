@@ -72,7 +72,7 @@ class Client extends BaseClient
      *
      * @return string
      */
-    public function getApiUsername(): string
+    final public function getApiUsername(): string
     {
         return $this->apiUsername;
     }
@@ -82,7 +82,7 @@ class Client extends BaseClient
      *
      * @return string
      */
-    public function getApiPassword(): string
+    final public function getApiPassword(): string
     {
         return $this->apiPassword;
     }
