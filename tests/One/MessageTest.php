@@ -4,7 +4,6 @@ namespace Silverstreet\TestCase\One;
 
 use Mockery as m;
 use Silverstreet\Client;
-use Silverstreet\One\Message;
 use PHPUnit\Framework\TestCase;
 use Laravie\Codex\Testing\Faker;
 
