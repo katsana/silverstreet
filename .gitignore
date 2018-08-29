@@ -1,9 +1,11 @@
 # Composer
 /vendor/
-composer.lock
+/composer.lock
 
 # Sample
 /demo.php
 
 # PHPUnit
-coverage/
+/coverage/
+/phpunit.xml
+/.phpunit.result.cache
