@@ -41,7 +41,7 @@ class Client extends BaseClient
     ];
 
     /**
-     * Construct a new Billplz Client.
+     * Construct a new Silverstreet Client.
      *
      * @param \Http\Client\Common\HttpMethodsClient $http
      * @param string                                $apiUsername
