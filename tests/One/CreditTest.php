@@ -18,7 +18,7 @@ class BalanceTest extends TestCase
     }
 
     /** @test */
-    public function it_can_check_balance()
+    public function it_can_check_available_balance()
     {
         $body = [
             'username' => 'foo',
@@ -36,7 +36,7 @@ class BalanceTest extends TestCase
 
         $client = new Client($faker->http(), $body['username'], $body['password']);
 
-        $response = $client->uses('Balance')->check();
+        $response = $client->uses('Credit')->available();
 
         $this->assertSame(1437, $response);
     }

@@ -7,14 +7,14 @@ use Laravie\Parser\Xml\Reader;
 use Silverstreet\Request;
 use Silverstreet\Response;
 
-class Balance extends Request
+class Credit extends Request
 {
     /**
-     * Check Silverstreet account balance.
+     * Check Silverstreet account available credit balance.
      *
      * @return int
      */
-    public function check(): int
+    public function available(): int
     {
         $xml = $this->fromResponse(
             $this->send('POST', 'creditcheck.php', $this->getApiHeaders(), $this->getApiBody())
