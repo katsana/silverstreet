@@ -3,7 +3,7 @@
 /composer.lock
 
 # Sample
-/demo.php
+/example.php
 
 # PHPUnit
 /coverage/
