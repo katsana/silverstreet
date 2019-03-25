@@ -10,7 +10,8 @@ Silverstreet API Client for PHP
 * [Installation](#installation)
 * [Usages](#usages)
   - [Creating Silverstreet Client](#creating-silverstreet-client)
-  - [Sending Text Messages](#sending-text-messages)
+  - [Sending SMS](#sending-sms)
+  - [Checking Credit Balance](#checking-credit-balance)
 
 ## Installation
 
@@ -20,7 +21,7 @@ To install through composer, simply put the following in your `composer.json` fi
 {
     "require": {
         "katsana/silverstreet": "^3.0",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^2.0"
     }
 }
 ```
@@ -62,6 +63,7 @@ use Silverstreet\Client;
 $silverstreet = Client::make('your-api-username', 'your-api-password');
 ```
 
+<a name="sending-text-messages"></a>
 ### Sending Text Messages
 
 You can send text messages by running the following code.
@@ -69,4 +71,14 @@ You can send text messages by running the following code.
 ```php
 $silverstreet->uses('Message')
     ->text('Hello world', '+60123456789', $sender);
+```
+
+### Checking Credit Balance
+
+You can request for available balance by running the following code.
+
+```php
+$balance = $silverstreet->uses('Credit')->available();
+
+echo $balance; // 400
 ```
