@@ -3,9 +3,8 @@
 namespace Silverstreet;
 
 use DomainException;
-use Laravie\Codex\Response as BaseResponse;
 
-class Response extends BaseResponse
+class Response extends \Laravie\Codex\Response
 {
     /**
      * Convert response body to array.

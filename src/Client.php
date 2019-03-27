@@ -3,10 +3,9 @@
 namespace Silverstreet;
 
 use Http\Client\Common\HttpMethodsClient as HttpClient;
-use Laravie\Codex\Client as BaseClient;
 use Laravie\Codex\Discovery;
 
-class Client extends BaseClient
+class Client extends \Laravie\Codex\Client
 {
     /**
      * The API endpoint.

@@ -17,13 +17,12 @@ class ResponseTest extends TestCase
         m::close();
     }
 
-    /**
-     * @test
-     * @expectedException \DomainException
-     * @expectedExceptionMessage Unable to convert response to array!
-     */
+    /** @test */
     public function it_cant_be_converted_to_array()
     {
+        $this->expectException('DomainException');
+        $this->expectExceptionMessage('Unable to convert response to array!');
+
         $message = m::mock(ResponseInterface::class);
 
         $message->shouldReceive('getStatusCode')->andReturn(200);

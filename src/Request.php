@@ -3,10 +3,9 @@
 namespace Silverstreet;
 
 use Laravie\Codex\Contracts\Response as ResponseContract;
-use Laravie\Codex\Request as BaseRequest;
 use Psr\Http\Message\ResponseInterface;
 
-abstract class Request extends BaseRequest
+abstract class Request extends \Laravie\Codex\Request
 {
     /**
      * Resolve the responder class.
