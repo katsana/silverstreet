@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "laravie/codex": "^5.0",
+        "laravie/codex": "^4.0 || ^5.0",
         "php-http/multipart-stream-builder": "^1.0"
     },
     "require-dev": {
