@@ -40,14 +40,8 @@ You can start by creating a client by using the following code (which uses `php-
 <?php
 
 use Silverstreet\Client;
-use Http\Client\Common\HttpMethodsClient;
-use Http\Adapter\Guzzle6\Client as GuzzleHttpClient;
-use Http\Message\MessageFactory\GuzzleMessageFactory;
 
-$http = new HttpMethodsClient(
-    new GuzzleHttpClient(), 
-    new GuzzleMessageFactory()
-);
+$http = Laravie\Codex\Discovery::client();
 
 
 $silverstreet = new Client($http, 'your-api-username', 'your-api-password');
