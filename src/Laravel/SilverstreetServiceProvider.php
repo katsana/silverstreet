@@ -2,7 +2,7 @@
 
 namespace Silverstreet\Laravel;
 
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Laravie\Codex\Discovery;
@@ -17,7 +17,7 @@ class SilverstreetServiceProvider extends ServiceProvider implements DeferrableP
      */
     public function register()
     {
-        $this->app->singleton('silverstreet', function (Application $app) {
+        $this->app->singleton('silverstreet', function (Container $app) {
             return $this->createSilverstreetClient(
                 $app->make('config')->get('services.silverstreet')
             );

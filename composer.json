@@ -20,7 +20,7 @@
         "php-http/multipart-stream-builder": "^1.0"
     },
     "require-dev": {
-        "illuminate/support": "^5.8",
+        "illuminate/support": "^5.8 || ^6.0",
         "laravie/parser": "^2.0",
         "mockery/mockery": "^1.2",
         "php-http/curl-client": "^1.7 || ^2.0",
