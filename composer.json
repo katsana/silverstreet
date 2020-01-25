@@ -37,6 +37,13 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Silverstreet\\Laravel\\SilverstreetServiceProvider"
+            ]
+        }
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
