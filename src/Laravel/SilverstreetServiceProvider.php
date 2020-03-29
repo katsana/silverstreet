@@ -26,10 +26,6 @@ class SilverstreetServiceProvider extends ServiceProvider implements DeferrableP
 
     /**
      * Create Silverstreet Client.
-     *
-     * @param array $config
-     *
-     * @return \Silverstreet\Client
      */
     protected function createSilverstreetClient(array $config): Client
     {

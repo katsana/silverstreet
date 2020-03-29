@@ -9,10 +9,6 @@ abstract class Request extends \Laravie\Codex\Request
 {
     /**
      * Resolve the responder class.
-     *
-     * @param \Psr\Http\Message\ResponseInterface $response
-     *
-     * @return \Laravie\Codex\Contracts\Response
      */
     protected function responseWith(ResponseInterface $response): ResponseContract
     {
@@ -21,8 +17,6 @@ abstract class Request extends \Laravie\Codex\Request
 
     /**
      * Get API Body.
-     *
-     * @return array
      */
     protected function getApiBody(): array
     {

@@ -39,10 +39,6 @@ class Client extends \Laravie\Codex\Client
 
     /**
      * Construct a new Silverstreet Client.
-     *
-     * @param \Http\Client\Common\HttpMethodsClient $http
-     * @param string                                $apiUsername
-     * @param string                                $apiPassword
      */
     public function __construct(HttpClient $http, string $apiUsername, string $apiPassword)
     {
@@ -54,9 +50,6 @@ class Client extends \Laravie\Codex\Client
     /**
      * Make a client.
      *
-     * @param string $apiUsername
-     * @param string $apiPassword
-     *
      * @return static
      */
     public static function make(string $apiUsername, string $apiPassword)
@@ -66,8 +59,6 @@ class Client extends \Laravie\Codex\Client
 
     /**
      * Get API username.
-     *
-     * @return string
      */
     final public function getApiUsername(): string
     {
@@ -76,8 +67,6 @@ class Client extends \Laravie\Codex\Client
 
     /**
      * Get API Password.
-     *
-     * @return string
      */
     final public function getApiPassword(): string
     {
@@ -86,8 +75,6 @@ class Client extends \Laravie\Codex\Client
 
     /**
      * Get resource default namespace.
-     *
-     * @return string
      */
     protected function getResourceNamespace(): string
     {

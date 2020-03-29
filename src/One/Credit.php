@@ -11,8 +11,6 @@ class Credit extends Request
 {
     /**
      * Check Silverstreet account available credit balance.
-     *
-     * @return int
      */
     public function available(): int
     {
@@ -29,10 +27,6 @@ class Credit extends Request
 
     /**
      * Convert Response to XML document for parsing.
-     *
-     * @param \Silverstreet\Response $response
-     *
-     * @return \Laravie\Parser\Xml\Document
      */
     protected function fromResponse(Response $response): Document
     {

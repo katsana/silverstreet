@@ -2,8 +2,8 @@
 
 namespace Silverstreet\Tests\Laravel;
 
-use Silverstreet\Laravel\SilverstreetServiceProvider;
 use PHPUnit\Framework\TestCase;
+use Silverstreet\Laravel\SilverstreetServiceProvider;
 
 class SilverstreetServiceProviderTest extends TestCase
 {

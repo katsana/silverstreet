@@ -8,8 +8,6 @@ class Response extends \Laravie\Codex\Response
 {
     /**
      * Convert response body to array.
-     *
-     * @return array
      */
     public function toArray(): array
     {
