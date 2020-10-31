@@ -3,39 +3,21 @@ language: php
 
 php:
   - 7.2
-  - 7.3
 
-env:
-  global:
-    - coverage=no
-  matrix:
-    - setup=basic
-    - setup=lowest
-    - setup=stable
+before_install:
+  - travis_retry composer self-update
+  - composer config discard-changes true
 
 before_script:
-  - composer config discard-changes true
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --prefer-dist --no-interaction; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
-  - if [[ $setup = 'coveralls' ]]; then travis_retry composer require "satooshi/php-coveralls=~1.0" --prefer-dist --no-interaction --dev; fi
+  - composer install --prefer-dist --no-interaction
+  - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar
+  - chmod +x php-coveralls.phar
 
 script:
-  - if [[ $coverage = 'yes' ]]; then vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml; fi
-  - if [[ $coverage = 'no' ]]; then vendor/bin/phpunit -c phpunit.xml.dist; fi
+  - vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml
 
 after_script:
-  - if [[ $setup = 'coveralls' ]]; then php vendor/bin/coveralls -v; fi
+  - php-coveralls.phar -v
 
 matrix:
-  include:
-    - php: 7.4
-      env: setup=basic
-    - php: 7.4
-      env: setup=stable
-    - php: 7.2
-      env: setup=coveralls coverage=yes
-  allow_failures:
-    - env: setup=lowest
-    - env: setup=coveralls coverage=yes
   fast_finish: true
