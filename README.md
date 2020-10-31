@@ -1,7 +1,7 @@
 Silverstreet API Client for PHP
 ==============
 
-[![Build Status](https://travis-ci.org/katsana/silverstreet.svg?branch=master)](https://travis-ci.org/katsana/silverstreet)
+[![tests](https://github.com/katsana/silverstreet/workflows/tests/badge.svg?branch=master)](https://github.com/katsana/silverstreet/actions?query=branch%3Amaster+workflow%3Atests)
 [![Latest Stable Version](https://poser.pugx.org/katsana/silverstreet/v/stable)](https://packagist.org/packages/katsana/silverstreet)
 [![Total Downloads](https://poser.pugx.org/katsana/silverstreet/downloads)](https://packagist.org/packages/katsana/silverstreet)
 [![Latest Unstable Version](https://poser.pugx.org/katsana/silverstreet/v/unstable)](https://packagist.org/packages/katsana/silverstreet)
