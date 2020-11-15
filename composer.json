@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "php": ">=7.2",
+        "php": "^7.2 || ^8.0",
         "laravie/codex": "^5.1",
         "php-http/multipart-stream-builder": "^1.0"
     },
@@ -24,7 +24,7 @@
         "illuminate/support": "^5.8 || ^6.0 || ^7.0 || ^8.0",
         "laravie/parser": "^2.0",
         "mockery/mockery": "^1.3",
-        "php-http/curl-client": "^2.0",
+        "php-http/guzzle7-adapter": "^0.1.1",
         "phpunit/phpunit": "^7.5 || ^8.4 || ^9.0"
     },
     "suggest": {

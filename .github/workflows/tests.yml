@@ -19,6 +19,7 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
+          - "8.0"
         dependencies:
           - "locked"
           - "highest"
@@ -47,5 +48,8 @@ jobs:
 
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
+        with:
+          composer-options: "--prefer-dist --no-cache"
+
       - name: Execute tests
         run: vendor/bin/phpunit
