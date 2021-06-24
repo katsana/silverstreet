@@ -12,7 +12,7 @@ class Client extends \Laravie\Codex\Client
      *
      * @var string
      */
-    protected $apiEndpoint = 'https://api.silverstreet.com';
+    protected $apiEndpoint = 'https://ic1.silverstreet.com';
 
     /**
      * The API username.
