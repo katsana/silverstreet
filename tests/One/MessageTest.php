@@ -27,7 +27,7 @@ class MessageTest extends TestCase
 
         $faker = Faker::create()
                     ->stream('POST', m::type('Array'))
-                    ->expectEndpointIs('https://api.silverstreet.com/send.php')
+                    ->expectEndpointIs('https://ic1.silverstreet.com/send.php')
                     ->shouldResponseWith(200, '1');
 
         $client = new Client($faker->http(), $body['username'], $body['password']);

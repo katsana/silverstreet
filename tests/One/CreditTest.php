@@ -27,7 +27,7 @@ class BalanceTest extends TestCase
 
         $faker = Faker::create()
                     ->send('POST', [], 'username=foo&password=bar')
-                    ->expectEndpointIs('https://api.silverstreet.com/creditcheck.php')
+                    ->expectEndpointIs('https://ic1.silverstreet.com/creditcheck.php')
                     ->shouldResponseWith(200, '<?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="creditcheck.xsl"?>
 <credits>

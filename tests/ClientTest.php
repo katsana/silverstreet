@@ -27,7 +27,7 @@ class ClientTest extends TestCase
 
         $this->assertEquals('foo', $client->getApiUsername());
         $this->assertEquals('bar', $client->getApiPassword());
-        $this->assertEquals('https://api.silverstreet.com', $client->getApiEndpoint());
+        $this->assertEquals('https://ic1.silverstreet.com', $client->getApiEndpoint());
         $this->assertEquals('v1', $client->getApiVersion());
     }
 }
